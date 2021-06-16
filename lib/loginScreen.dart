@@ -1,19 +1,16 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'home.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
+import 'registerScreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatefulWidget {
-  //const LoginScreen({ Key? key }) : super(key: key);
-
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
-// final _auth = FirebaseAuth.instance;
+final _auth = FirebaseAuth.instance;
 
 class _LoginScreenState extends State<LoginScreen> {
   String email = "";
@@ -45,7 +42,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RegisterScreen()),
+                        );
+                      },
                       child: Container(
                           margin: EdgeInsets.only(top: 10),
                           decoration: BoxDecoration(
@@ -159,22 +162,21 @@ class _LoginScreenState extends State<LoginScreen> {
                     ]),
                     SizedBox(height: 40),
                     InkWell(
-                        // onTap: () async {
-                        //   try {
-                        //     final user = await _auth.signInWithEmailAndPassword(
-                        //         email: email, password: password);
-                        //     if (user != null) {
-                        //       // Get.toNamed("/home");
-                        //     }
-                        //   } catch (e) {
-                        //     print(e);
-                        //   }
-                        // },
-                        onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeScreen()),
-                            ),
+                        onTap: () async {
+                          try {
+                            final user = await _auth.signInWithEmailAndPassword(
+                                email: email, password: password);
+                            if (user != null) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomeScreen()),
+                              );
+                            }
+                          } catch (e) {
+                            print(e);
+                          }
+                        },
                         child: Container(
                             width: 270,
                             height: 50,

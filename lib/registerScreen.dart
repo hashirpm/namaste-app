@@ -180,17 +180,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ]),
                     SizedBox(height: 40),
                     InkWell(
-                        onTap: () {
-                          // try {
-                          //   final newUser =
-                          //       await _auth.createUserWithEmailAndPassword(
-                          //           email: email, password: password);
-                          //   if (newUser != null) {
-                          //     Get.to(Products());
-                          //   }
-                          // } catch (e) {
-                          //   print(e);
-                          // }
+                        onTap: () async {
+                          try {
+                            final newUser =
+                                await _auth.createUserWithEmailAndPassword(
+                                    email: email, password: password);
+                            if (newUser != null) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomeScreen()),
+                              );
+                            }
+                          } catch (e) {
+                            print(e);
+                          }
                         },
                         child: Container(
                             width: 270,

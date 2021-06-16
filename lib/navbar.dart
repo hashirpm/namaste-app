@@ -90,7 +90,7 @@ class NavBar extends StatelessWidget {
                       leading: navRoutes[index]["icon"],
                       onTap: () {
                         print("${navRoutes[index]['to']}()");
-                        Get.to(HomeScreen());
+                        //Get.to(HomeScreen());
                       }),
                   Divider()
                 ]),
