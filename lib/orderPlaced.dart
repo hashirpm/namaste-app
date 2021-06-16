@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math show sin, pi, sqrt;
 import 'package:flutter/animation.dart';
+import 'package:namaste/home.dart';
 
 import 'circlepainter.dart';
 import 'curvewave.dart';
@@ -11,8 +12,6 @@ class Order extends StatefulWidget {
     Key? key,
     required this.size,
     required this.color,
-    // required this.onPressed,
-    // required this.child,
   }) : super(key: key);
   final double size;
   final Color color;
@@ -49,7 +48,7 @@ class _OrderState extends State<Order> with TickerProviderStateMixin {
               colors: <Color>[
                 widget.color,
                 // Colors.black
-                (Color.lerp(widget.color, Colors.pink, .05))!
+                (Color.lerp(widget.color, Colors.green[50], .05))!
               ],
             ),
           ),
@@ -73,7 +72,7 @@ class _OrderState extends State<Order> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink[50],
+      backgroundColor: Colors.green[50],
       body: Center(
         child: SingleChildScrollView(
             child: Column(
@@ -89,7 +88,7 @@ class _OrderState extends State<Order> with TickerProviderStateMixin {
                 child: _button(),
               ),
             ),
-            Text("Order Placed",
+            Text("Thank you!",
                 style: TextStyle(
                     color: Colors.brown[400],
                     fontSize: 25,
@@ -100,7 +99,7 @@ class _OrderState extends State<Order> with TickerProviderStateMixin {
             Padding(
               padding: EdgeInsets.only(left: 60, right: 60),
               child: Text(
-                "Your order was placed Successfully.For more details check your product page or just Skip",
+                "Your spirit will make a big difference",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 15),
               ),
@@ -113,15 +112,15 @@ class _OrderState extends State<Order> with TickerProviderStateMixin {
               child: RaisedButton(
                 onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Search()),
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Shop more",
+                      "Go Home",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: 16),
                     ),
                     Icon(
                       Icons.chevron_right_outlined,
