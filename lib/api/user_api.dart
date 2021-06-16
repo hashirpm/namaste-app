@@ -1,11 +1,7 @@
-
-
-
 import 'package:dio/dio.dart';
 import 'package:namaste/models/product.dart';
 import 'package:namaste/models/user.dart';
 import 'package:namaste/models/waste.dart';
-
 
 class UserApi {
   final Dio dio;
@@ -14,13 +10,11 @@ class UserApi {
   UserApi()
       : dio = Dio(
           BaseOptions(
-              // __HEROKU URL___
-               baseUrl: "https://namastebackend.herokuapp.com/api/user",
+            // __HEROKU URL___
+            baseUrl: "https://namastebackend.herokuapp.com/api/user",
+          ),
+        );
 
-            
-              ),
-        ); 
-   
   Future<Response> addUser({
     required UserData userData,
   }) async {
@@ -63,8 +57,6 @@ class UserApi {
     }
   }
 
- 
-
   Future getUser({
     required String uid,
   }) async {
@@ -87,9 +79,6 @@ class UserApi {
       throw e;
     }
   }
-
-
-
 
   Future findUserByPhone({
     required String phone,
@@ -116,12 +105,10 @@ class UserApi {
 
   Future<Response> makeAdmin({
     required String id,
-
   }) async {
     try {
       print("add admin called");
-      Response response =
-          await dio.post('/makeAdmin/$id');
+      Response response = await dio.post('/makeAdmin/$id');
       print("add admin success");
       return response;
     } on DioError catch (e) {
@@ -132,15 +119,11 @@ class UserApi {
       throw e;
     }
   }
-   Future<Response> addPoints({
-    required String id,
-    required int points
 
-  }) async {
+  Future<Response> addPoints({required String id, required int points}) async {
     try {
       print("add points called");
-      Response response =
-          await dio.post('/addPoints/$id/$points');
+      Response response = await dio.post('/addPoints/$id/$points');
       print("add points success");
       return response;
     } on DioError catch (e) {
@@ -152,17 +135,12 @@ class UserApi {
     }
   }
 
-    Future<Response> addWaste({
- 
-    required WasteData wasteData
-
-  }) async {
+  Future<Response> addWaste({required WasteData wasteData}) async {
     Map data = wasteData.toJson();
     data.remove("_id");
     try {
       print("add wasste called");
-      Response response =
-          await dio.post('/addWaste/',data:data);
+      Response response = await dio.post('/addWaste/', data: data);
       print("add waste success");
       return response;
     } on DioError catch (e) {
@@ -173,17 +151,13 @@ class UserApi {
       throw e;
     }
   }
-   Future<Response> addProduct({
- 
-    required ProductData productData
 
-  }) async {
+  Future<Response> addProduct({required ProductData productData}) async {
     Map data = productData.toJson();
     data.remove("_id");
     try {
       print("add product called");
-      Response response =
-          await dio.post('/addProduct/',data:data);
+      Response response = await dio.post('/addProduct/', data: data);
       print("add product success");
       return response;
     } on DioError catch (e) {
@@ -194,6 +168,7 @@ class UserApi {
       throw e;
     }
   }
+
   Future<Response> fetchUserWaste({
     required String id,
   }) async {
@@ -209,7 +184,8 @@ class UserApi {
       throw e;
     }
   }
-    Future<Response> fetchUserProduct({
+
+  Future<Response> fetchUserProduct({
     required String id,
   }) async {
     try {
@@ -224,8 +200,4 @@ class UserApi {
       throw e;
     }
   }
-
-
 }
-
-

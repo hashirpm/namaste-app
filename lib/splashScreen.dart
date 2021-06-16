@@ -12,7 +12,6 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Timer(
         Duration(seconds: 3),
@@ -24,27 +23,19 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-            child: Stack(children: [
-      new Image(
-        image: new AssetImage("images/splash.jpg"),
-        fit: BoxFit.cover,
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-      ),
-      Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            color: Colors.white.withOpacity(0.6),
-            height: 200,
-            alignment: Alignment.center,
-            child: new Image(
-              image: new AssetImage("images/logo.png"),
-              fit: BoxFit.cover,
-            ),
-          ),
-        ],
-      ),
-    ])));
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+          new Image(
+              image: new AssetImage("images/logoNamaste.png"), width: 200),
+          Text(
+            "namaste",
+            style: TextStyle(
+                color: Colors.green[900],
+                fontWeight: FontWeight.w700,
+                fontSize: 30),
+          )
+        ])));
   }
 }
