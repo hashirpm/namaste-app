@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:namaste/loginScreen.dart';
+import 'package:namaste/pages/leaderboard.dart';
 import 'package:namaste/pages/my_account.dart';
 import 'package:namaste/pages/security.dart';
 import 'package:namaste/pages/start_page.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           ),
           initialRoute: '/',
           routes: {
-            '/': (context) => SplashScreen(),
+            '/': (context) => LeaderBoard(),
             '/start': (context) => StartPage(),
             '/my_profile': (context) => MyProfile(),
             '/security': (context) => Security(),
