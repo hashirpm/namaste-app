@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../navbar.dart';
+
 class Security extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,6 +15,7 @@ class Security extends StatelessWidget {
           ),
         ),
       ),
+      drawer: NavBar(),
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:namaste/pages/start_page.dart';
 import 'home.dart';
 
 class ScheduleConfirmation extends StatelessWidget {
@@ -33,9 +34,9 @@ class ScheduleConfirmation extends StatelessWidget {
       SizedBox(height: 40),
       InkWell(
         onTap: () {
-          Navigator.push(
+          Navigator.pushNamed(
             context,
-            MaterialPageRoute(builder: (context) => HomeScreen()),
+            "/start_page",
           );
         },
         child: Text("GO HOME >",

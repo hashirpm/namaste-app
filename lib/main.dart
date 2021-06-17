@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:namaste/loginScreen.dart';
+import 'package:namaste/pages/aboutUs.dart';
+import 'package:namaste/pages/buyUs.dart';
+import 'package:namaste/pages/eWaste.dart';
+import 'package:namaste/pages/home.dart';
+import 'package:namaste/pages/loginScreen.dart';
 import 'package:namaste/pages/leaderboard.dart';
 import 'package:namaste/pages/my_account.dart';
+import 'package:namaste/pages/plasticWaste.dart';
+import 'package:namaste/pages/productsScreen.dart';
 import 'package:namaste/pages/security.dart';
 import 'package:namaste/pages/start_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:namaste/pages/wasteForm.dart';
 import 'package:namaste/providers/user_provider.dart';
+import 'package:namaste/pages/wasteHome.dart';
 import 'package:provider/provider.dart';
-import 'splashScreen.dart';
+import 'pages/splashScreen.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 Future<void> main() async {
@@ -32,10 +40,20 @@ class MyApp extends StatelessWidget {
           ),
           initialRoute: '/',
           routes: {
-            '/': (context) => LeaderBoard(),
-            '/start': (context) => StartPage(),
+            '/': (context) => SplashScreen(),
+            '/login': (context) => LoginScreen(),
+            '/home_duplicate': (context) => HomeScreen(),
+            '/leader': (context) => LeaderBoard(),
+            '/home': (context) => StartPage(),
             '/my_profile': (context) => MyProfile(),
             '/security': (context) => Security(),
+            '/waste': (context) => WasteHome(),
+            '/ewaste': (context) => EWaste(),
+            '/plastic_waste': (context) => PlasticWaste(),
+            '/waste_form': (context) => WasteForm(),
+            '/products': (context) => Products(),
+            '/buy_us': (context) => BuyUs(),
+            '/about': (context) => AboutUs()
           },
         ));
   }

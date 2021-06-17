@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:namaste/navbar.dart';
+import 'package:namaste/pages/scheduleConfirm.dart';
 
 class WasteForm extends StatefulWidget {
   const WasteForm({Key? key}) : super(key: key);
@@ -22,6 +24,7 @@ class _WasteFormState extends State<WasteForm> {
           elevation: 0,
           backgroundColor: Colors.transparent,
         ),
+        drawer: NavBar(),
         body: Center(
             child: Container(
                 padding: EdgeInsets.all(10),
@@ -127,10 +130,15 @@ class _WasteFormState extends State<WasteForm> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: InkWell(
+                            onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        ScheduleConfirmation())),
                             child: Text(
-                          "SUBMIT",
-                          style: TextStyle(color: Colors.green[900]),
-                        ))),
+                              "SUBMIT",
+                              style: TextStyle(color: Colors.green[900]),
+                            ))),
                     SizedBox(height: 40),
                     Container(
                         padding: EdgeInsets.all(10),

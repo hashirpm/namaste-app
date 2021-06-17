@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:namaste/widgets/ranklist_item.dart';
 
+import '../navbar.dart';
+
 class LeaderBoard extends StatefulWidget {
   @override
   _LeaderBoardState createState() => _LeaderBoardState();
@@ -11,14 +13,17 @@ class _LeaderBoardState extends State<LeaderBoard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Leaderboard"),
-        backgroundColor: Color(0xff82D382),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(30),
-          ),
-        ),
+        leading: Builder(builder: (BuildContext context) {
+          return IconButton(
+              icon: const Icon(Icons.menu, color: Colors.grey),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              });
+        }),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
       ),
+      drawer: NavBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [

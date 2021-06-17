@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:namaste/navbar.dart';
 
-class PlasticWaste extends StatelessWidget {
+class EWaste extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,37 +16,19 @@ class PlasticWaste extends StatelessWidget {
           elevation: 0,
           backgroundColor: Colors.transparent,
         ),
+        drawer: NavBar(),
         body: Container(
-            child: Stack(
+            child: Column(
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Image(
-                  image: AssetImage("assets/images/plastic.png"),
-                ),
-              ],
+            Image(
+              image: AssetImage("assets/images/e.png"),
             ),
             Expanded(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                  Column(children: [
-                    SizedBox(height: 50),
-                    Text("1000s of years!",
-                        style: TextStyle(
-                            fontSize: 25,
-                            color: Colors.green[900],
-                            fontWeight: FontWeight.bold)),
-                    Container(
-                        padding: EdgeInsets.all(5),
-                        child: Text(
-                            "Yes, that is the time it takes for all the plastic in our landfills to get decomposed. Every plastic bag takes around 10-20 years while plastic bottles take 450 year.",
-                            style: TextStyle(fontSize: 15, color: Colors.black),
-                            textAlign: TextAlign.center))
-                  ]),
-                  SizedBox(height: 100),
+                  SizedBox(height: 50),
                   Container(
                       height: 50,
                       width: MediaQuery.of(context).size.width / 1.1,
@@ -67,8 +50,9 @@ class PlasticWaste extends StatelessWidget {
                                       color: Colors.green[900],
                                       fontWeight: FontWeight.w700,
                                       fontSize: 18)),
-                              onTap: () {}))),
-                  SizedBox(height: 70),
+                              onTap: () => Navigator.pushNamed(
+                                  context, "/waste_form")))),
+                  SizedBox(height: 50),
                   Container(
                       height: 50,
                       width: MediaQuery.of(context).size.width / 1.1,
@@ -90,7 +74,14 @@ class PlasticWaste extends StatelessWidget {
                                       color: Colors.green[900],
                                       fontWeight: FontWeight.w700,
                                       fontSize: 17)),
-                              onTap: () {})))
+                              onTap: () {}))),
+                  SizedBox(height: 30),
+                  Container(
+                      padding: EdgeInsets.all(5),
+                      child: Text(
+                          "Most electronics contain some form of toxic materials, including beryllium, cadmium, mercury, and lead, which pose serious environmental risks to our soil, water, air, and wildlife.",
+                          style: TextStyle(fontSize: 15, color: Colors.black),
+                          textAlign: TextAlign.center))
                 ]))
           ],
         )));
