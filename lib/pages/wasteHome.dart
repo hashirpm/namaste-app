@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:namaste/navbar.dart';
+import 'package:namaste/pages/eWaste.dart';
+import 'package:namaste/pages/plasticWaste.dart';
 
 class WasteHome extends StatefulWidget {
   const WasteHome({Key? key}) : super(key: key);
@@ -22,6 +25,7 @@ class _WasteHomeState extends State<WasteHome> {
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
+      drawer: NavBar(),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -31,15 +35,29 @@ class _WasteHomeState extends State<WasteHome> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              getImageCard(context, "assets/images/bio-waste.png", "Bio-waste"),
-              getImageCard(context, "assets/images/e-waste.png", "E-waste")
+              InkWell(
+                  onTap: () => null,
+                  child: getImageCard(
+                      context, "assets/images/bio-waste.png", "Bio-waste")),
+              InkWell(
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => EWaste())),
+                  child: getImageCard(
+                      context, "assets/images/e-waste.png", "E-waste"))
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              getImageCard(context, "assets/images/plas.png", "Plastic waste"),
-              getImageCard(context, "assets/images/agri.png", "Agricultural waste")
+              InkWell(
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => PlasticWaste())),
+                  child: getImageCard(
+                      context, "assets/images/plas.png", "Plastic waste")),
+              InkWell(
+                  onTap: () => null,
+                  child: getImageCard(
+                      context, "assets/images/agri.png", "Agricultural waste"))
             ],
           ),
           Row(

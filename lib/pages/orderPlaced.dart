@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math show sin, pi, sqrt;
 import 'package:flutter/animation.dart';
-import 'package:namaste/home.dart';
-
-import 'circlepainter.dart';
-import 'curvewave.dart';
-import 'search.dart';
+import './home.dart';
+import '../circlepainter.dart';
+import '../curvewave.dart';
 
 class Order extends StatefulWidget {
   const Order({

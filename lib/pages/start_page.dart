@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:namaste/widgets/card.dart';
 
+import '../navbar.dart';
+
 class StartPage extends StatefulWidget {
   @override
   _StartPageState createState() => _StartPageState();
@@ -22,6 +24,7 @@ class _StartPageState extends State<StartPage> {
             ),
           ),
         ),
+        drawer: NavBar(),
         body: SingleChildScrollView(
           child: Center(
             child: Column(

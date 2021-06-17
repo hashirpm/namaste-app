@@ -1,52 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'home.dart';
+import 'pages/home.dart';
 
 class NavBar extends StatelessWidget {
   //const NavBar({ Key? key }) : super(key: key);
   List navRoutes = [
-    {"pagename": "Home", "icon": Icon(Icons.home_filled), "to": HomeScreen()},
-    {"pagename": "Shop", "icon": Icon(Icons.shopping_bag), "to": HomeScreen()},
+    {"pagename": "Home", "icon": Icon(Icons.home_filled), "to": "/home"},
     {
-      "pagename": "Period Calculator",
-      "icon": Icon(Icons.calendar_today),
+      "pagename": "Trash Collection",
+      "icon": Icon(Icons.shopping_cart_outlined),
+      "to": "/waste"
+    },
+    {"pagename": "Buy", "icon": Icon(Icons.shopping_bag), "to": "/products"},
+    {"pagename": "Sell", "icon": Icon(Icons.money), "to": HomeScreen()},
+    {
+      "pagename": "Buy Us a Tree",
+      "icon": Icon(FontAwesomeIcons.tree),
+      "to": "/buy_us"
+    },
+    {
+      "pagename": "Volunteer",
+      "icon": Icon(FontAwesomeIcons.donate),
+      "to": "/home"
+    },
+    {
+      "pagename": "Future Initiatives",
+      "icon": Icon(FontAwesomeIcons.lightbulb),
       "to": HomeScreen()
     },
     {
-      "pagename": "Telemedcine",
-      "icon": Icon(Icons.medical_services),
-      "to": HomeScreen()
+      "pagename": "Notifications",
+      "icon": Icon(FontAwesomeIcons.bell),
+      "to": "/home"
     },
-    {
-      "pagename": "Safety Mode",
-      "icon": Icon(Icons.favorite),
-      "to": HomeScreen()
-    },
-    {
-      "pagename": "Discussion Forum",
-      "icon": Icon(Icons.chat),
-      "to": HomeScreen()
-    },
-    {
-      "pagename": "Health tips and News",
-      "icon": Icon(Icons.pageview),
-      "to": HomeScreen()
-    },
-    {
-      "pagename": "Talks and Events",
-      "icon": Icon(Icons.event),
-      "to": HomeScreen()
-    },
-    {
-      "pagename": "Notification",
-      "icon": Icon(Icons.notifications),
-      "to": HomeScreen()
-    },
-    {"pagename": "My Profile", "icon": Icon(Icons.person), "to": HomeScreen()},
-    {"pagename": "About Us", "icon": Icon(Icons.star), "to": HomeScreen()},
-    {"pagename": "Settings", "icon": Icon(Icons.settings), "to": HomeScreen()},
+    {"pagename": "My Profile", "icon": Icon(Icons.person), "to": "/my_profile"},
+    {"pagename": "About Us", "icon": Icon(Icons.star), "to": "/about"},
+    {"pagename": "Settings", "icon": Icon(Icons.settings), "to": "/security"},
     {"pagename": "Help", "icon": Icon(Icons.help), "to": HomeScreen()},
-    {"pagename": "Logout", "icon": Icon(Icons.logout), "to": HomeScreen()},
+    {"pagename": "Logout", "icon": Icon(Icons.logout), "to": "/login"},
   ];
 
   @override
@@ -89,8 +81,7 @@ class NavBar extends StatelessWidget {
                       title: Text("${navRoutes[index]['pagename']}"),
                       leading: navRoutes[index]["icon"],
                       onTap: () {
-                        print("${navRoutes[index]['to']}()");
-                        //Get.to(HomeScreen());
+                        Navigator.pushNamed(context, navRoutes[index]['to']);
                       }),
                   Divider()
                 ]),

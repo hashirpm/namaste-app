@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:namaste/splashScreen.dart';
+import 'package:namaste/pages/aboutUs.dart';
+import 'package:namaste/pages/buyUs.dart';
+import 'package:namaste/pages/paymentMode.dart';
+import 'package:namaste/pages/productsScreen.dart';
+import 'package:namaste/pages/splashScreen.dart';
 
-import 'navbar.dart';
+import '../navbar.dart';
 
 class HomeScreen extends StatefulWidget {
   // const HomeScreen({Key? key}) : super(key: key);
@@ -29,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Center(
             child: FlatButton(
                 onPressed: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SplashScreen())),
+                    MaterialPageRoute(builder: (context) => Products())),
                 child: Text("Hey"))));
   }
 }

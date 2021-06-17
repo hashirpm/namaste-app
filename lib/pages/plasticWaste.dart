@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class EWaste extends StatelessWidget {
+import '../navbar.dart';
+
+class PlasticWaste extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,18 +17,38 @@ class EWaste extends StatelessWidget {
           elevation: 0,
           backgroundColor: Colors.transparent,
         ),
+        drawer: NavBar(),
         body: Container(
-            child: Column(
+            child: Stack(
           children: [
-            Image(
-              image: AssetImage("assets/assets/images/e.png"),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Image(
+                  image: AssetImage("assets/images/plastic.png"),
+                ),
+              ],
             ),
             Expanded(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                  SizedBox(height: 50),
+                  Column(children: [
+                    SizedBox(height: 50),
+                    Text("1000s of years!",
+                        style: TextStyle(
+                            fontSize: 25,
+                            color: Colors.green[900],
+                            fontWeight: FontWeight.bold)),
+                    Container(
+                        padding: EdgeInsets.all(5),
+                        child: Text(
+                            "Yes, that is the time it takes for all the plastic in our landfills to get decomposed. Every plastic bag takes around 10-20 years while plastic bottles take 450 year.",
+                            style: TextStyle(fontSize: 15, color: Colors.black),
+                            textAlign: TextAlign.center))
+                  ]),
+                  SizedBox(height: 100),
                   Container(
                       height: 50,
                       width: MediaQuery.of(context).size.width / 1.1,
@@ -48,8 +70,9 @@ class EWaste extends StatelessWidget {
                                       color: Colors.green[900],
                                       fontWeight: FontWeight.w700,
                                       fontSize: 18)),
-                              onTap: () {}))),
-                  SizedBox(height: 50),
+                              onTap: () => Navigator.pushNamed(
+                                  context, "/waste_form")))),
+                  SizedBox(height: 70),
                   Container(
                       height: 50,
                       width: MediaQuery.of(context).size.width / 1.1,
@@ -71,14 +94,7 @@ class EWaste extends StatelessWidget {
                                       color: Colors.green[900],
                                       fontWeight: FontWeight.w700,
                                       fontSize: 17)),
-                              onTap: () {}))),
-                  SizedBox(height: 30),
-                  Container(
-                      padding: EdgeInsets.all(5),
-                      child: Text(
-                          "Yes, that is the time it takes for all the plastic in our landfills to get decomposed. Every plastic bag takes around 10-20 years while plastic bottles take 450 year.",
-                          style: TextStyle(fontSize: 15, color: Colors.black),
-                          textAlign: TextAlign.center))
+                              onTap: () {})))
                 ]))
           ],
         )));
