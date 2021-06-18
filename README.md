@@ -59,6 +59,8 @@ This is where our flutter app comes in. This app allows the user to notify the w
 
 Thus, our project brings together efficient ways of disposal as well as proper collection of waste in the ultimate aim to reduce adverse effects to the environment.
 
+[UI MODEL](https://youtu.be/Fo5WxSLUZo0)
+
 ## Project Roadmap
 
 <img src="./assets/images/readmeIMG/plan.jpeg" width="500" height="300">
