@@ -18,6 +18,8 @@ The idea here is to introduce people to new ways of waste disposal through an ea
 
 ## Demo video
 
+[Link to Demo Video](https://youtu.be/xXcQq8mtQxw)
+
 ## App Screenshots
 
 <img src="./assets/images/readmeIMG/1.jpg" width="250" height="500">
@@ -63,3 +65,17 @@ The project currently does the following:
 . Allows users to schedule a pickup date
 . Manages different kinds of waste efficiently
 . Provides livelihood to various women and craftsmen communities
+
+## Contributors
+
+## Contributors
+
+[Rosemary Benny](https://github.com/Rosemary-benny)
+
+[Aishwarya Prabhu](https://github.com/Aishwarya-S-Prabhu)
+
+[Rishika Raveendran](https://github.com/Rishika-Raveendran)
+
+[Navneeth Variar](https://github.com/navneethvariar14)
+
+[Muhammed Hashir PM](https://github.com/hashirpm)
