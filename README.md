@@ -64,10 +64,35 @@ Thus, our project brings together efficient ways of disposal as well as proper c
 <img src="./assets/images/readmeIMG/plan.jpeg" width="500" height="300">
 
 The project currently does the following:
+1. Allows users to schedule a pickup date
+2. Manages different kinds of waste efficiently
+3. Provides livelihood to various women and craftsmen communities
 
-. Allows users to schedule a pickup date
-. Manages different kinds of waste efficiently
-. Provides livelihood to various women and craftsmen communities
+## How to Run
+**Step 1:**
+
+Download or clone this repo by using the link below:
+
+```
+https://github.com/hashirpm/shop-scan.git
+```
+
+**Step 2:**
+
+Go to project root and execute the following command in console to get the required dependencies: 
+
+```
+flutter pub get 
+```
+
+**Step 3:**
+
+Run main.dart file or usethe following command
+
+```
+flutter run
+```
+
 
 ## Contributors
 
