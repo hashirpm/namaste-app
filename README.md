@@ -20,9 +20,12 @@ The idea here is to introduce people to new ways of waste disposal through an ea
 
 ## App Screenshots
 
-<img src="./assets/images/readmeIMG/1.jpg" width="250" height="500"> <img src="./assets/images/readmeIMG/2.jpg" width="250" height="500">  
-<img src="./assets/images/readmeIMG/3.jpg" width="250" height="500"> <img src="./assets/images/readmeIMG/4.jpg" width="250" height="500"> 
-<img src="./assets/images/readmeIMG/5.jpg" width="250" height="500"> <img src="./assets/images/readmeIMG/6.jpg" width="250" height="500"> 
+<img src="./assets/images/readmeIMG/1.jpg" width="250" height="500">
+<img src="./assets/images/readmeIMG/2.jpg" width="250" height="500">  
+<img src="./assets/images/readmeIMG/3.jpg" width="250" height="500">
+<img src="./assets/images/readmeIMG/4.jpg" width="250" height="500"> 
+<img src="./assets/images/readmeIMG/5.jpg" width="250" height="500">
+<img src="./assets/images/readmeIMG/6.jpg" width="250" height="500"> 
 
 
 ## Long description
