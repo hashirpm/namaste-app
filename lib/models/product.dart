@@ -10,7 +10,7 @@ class ProductData {
   String? quantity;
 
   String? oPrice;
-    String? dPrrice;
+    String? dPrice;
   
  
 
@@ -19,7 +19,7 @@ class ProductData {
       this.name,
       this.quantity,
       this.oPrice,
-      this.dPrrice,
+      this.dPrice,
 
     });
 

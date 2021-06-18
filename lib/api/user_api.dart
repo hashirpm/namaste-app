@@ -5,13 +5,16 @@ import 'package:namaste/models/waste.dart';
 
 class UserApi {
   final Dio dio;
-  final String baseUrl = "https://namastebackend.herokuapp.com";
+  final String baseUrl = "https://namastebackend.eu-gb.cf.appdomain.cloud";
 
   UserApi()
       : dio = Dio(
           BaseOptions(
             // __HEROKU URL___
-            baseUrl: "https://namastebackend.herokuapp.com/api/user",
+            // baseUrl: "https://namastebackend.herokuapp.com/api/user",
+
+            // __IBM URL___
+            baseUrl: "https://namastebackend.eu-gb.cf.appdomain.cloud/api/user",
           ),
         );
 
@@ -140,7 +143,7 @@ class UserApi {
     data.remove("_id");
     try {
       print("add wasste called");
-      Response response = await dio.post('/addWaste/', data: data);
+      Response response = await dio.post('/addWaste', data: data);
       print("add waste success");
       return response;
     } on DioError catch (e) {
@@ -157,7 +160,7 @@ class UserApi {
     data.remove("_id");
     try {
       print("add product called");
-      Response response = await dio.post('/addProduct/', data: data);
+      Response response = await dio.post('/addProduct', data: data);
       print("add product success");
       return response;
     } on DioError catch (e) {

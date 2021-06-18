@@ -12,7 +12,7 @@ ProductData _$ProductDataFromJson(Map<String, dynamic> json) {
     name: json['name'] as String?,
     quantity: json['quantity'] as String?,
     oPrice: json['oPrice'] as String?,
-    dPrrice: json['dPrrice'] as String?,
+    dPrice: json['dPrice'] as String?,
   )..id = json['_id'] as String?;
 }
 
@@ -23,5 +23,5 @@ Map<String, dynamic> _$ProductDataToJson(ProductData instance) =>
       'name': instance.name,
       'quantity': instance.quantity,
       'oPrice': instance.oPrice,
-      'dPrrice': instance.dPrrice,
+      'dPrice': instance.dPrice,
     };
