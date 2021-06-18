@@ -28,7 +28,7 @@ The idea here is to introduce people to new ways of waste disposal through an ea
 <img src="./assets/images/readmeIMG/6.jpg" width="250" height="500"> 
 
 ## Architecture
-<img src="./assets/images/readmeIMG/arch.png" width="500" height="700">
+<img src="./assets/images/readmeIMG/arch.png" width="700" height="500">
 
 ## Long description
 
