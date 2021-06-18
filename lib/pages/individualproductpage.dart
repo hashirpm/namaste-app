@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:namaste/models/product.dart';
+import 'package:namaste/models/user.dart';
 import 'package:namaste/pages/scheduleConfirm.dart';
 import 'package:namaste/providers/user_provider.dart';
 import 'package:namaste/widgets/checkBox.dart';
@@ -29,8 +31,11 @@ class _IndividualProductState extends State<IndividualProduct> {
   var timeController = "";
   var typeController = "";
 bool isLoading=false;
+
   @override
   Widget build(BuildContext context) {
+     UserData userData= Provider.of<UserProvider>(context, listen: false).userData;
+
     return Scaffold(
         appBar: AppBar(
           leading: Builder(builder: (BuildContext context) {
@@ -117,7 +122,7 @@ bool isLoading=false;
                                   });
                               
                                   productData = ProductData(
-                                      uid: "#####",
+                                      uid: userData.uid,
                                       name: widget.pName.toString(),
                          
                                       quantity: "1",

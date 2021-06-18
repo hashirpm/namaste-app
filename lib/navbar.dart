@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:namaste/models/user.dart';
+import 'package:namaste/providers/user_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'pages/home.dart';
 
@@ -43,18 +46,24 @@ class NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     UserData userData= Provider.of<UserProvider>(context, listen: false).userData;
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
             child: Row(children: [
-              ClipOval(
-                child: Image.network(
-                  'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
-                  fit: BoxFit.cover,
-                  width: 90,
-                  height: 90,
+              // ClipOval(
+              //   child: Image.network(
+              //     'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+              //     fit: BoxFit.cover,
+              //     width: 90,
+              //     height: 90,
+              //   ),
+              // ),
+                ClipOval(
+                child: Icon(Icons.person,
+                 size: 60,
                 ),
               ),
               Expanded(
@@ -64,10 +73,10 @@ class NavBar extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Angela Fernandus",
+                            Text("${userData.name}",
                                 style: TextStyle(fontSize: 22),
                                 textAlign: TextAlign.left),
-                            Text("angela_13", textAlign: TextAlign.left)
+                            //Text("angela_13", textAlign: TextAlign.left)
                           ]))),
             ]),
           ),

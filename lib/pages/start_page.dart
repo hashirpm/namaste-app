@@ -1,5 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:namaste/models/user.dart';
+import 'package:namaste/providers/user_provider.dart';
 import 'package:namaste/widgets/card.dart';
+import 'package:provider/provider.dart';
 
 import '../navbar.dart';
 
@@ -9,14 +13,41 @@ class StartPage extends StatefulWidget {
 }
 
 class _StartPageState extends State<StartPage> {
+    bool loading = false;
+    @override
+  void initState() {
+    super.initState();
+    getUser();
+  }
+    Future getUser() async {
+    try {
+      setState(() {
+        loading = true;
+      });
+  
+ 
+     await Provider.of<UserProvider>(context, listen: false)
+          .getUser(uid: FirebaseAuth.instance.currentUser!.uid);
+
+
+      setState(() {
+        loading = false;
+      });
+    } catch (e) {
+      
+      print(e);
+     
+    }
+  }
   @override
   Widget build(BuildContext context) {
-    return Container(
+    UserData userData= Provider.of<UserProvider>(context, listen: false).userData;
+    return loading? Scaffold(body: Center(child: CircularProgressIndicator())): Container(
       color: Colors.white,
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text("namaste"),
+          title: Text("namaste ${userData.name}"),
           backgroundColor: Color(0xff82D382),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
@@ -30,6 +61,7 @@ class _StartPageState extends State<StartPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+      
                 Container(
                   padding: EdgeInsets.all(10),
                   width: MediaQuery.of(context).size.width * 0.9,

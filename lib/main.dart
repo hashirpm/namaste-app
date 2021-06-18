@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:namaste/pages/aboutUs.dart';
 import 'package:namaste/pages/buyUs.dart';
+import 'package:namaste/pages/deciderPage.dart';
 import 'package:namaste/pages/eWaste.dart';
 import 'package:namaste/pages/home.dart';
 import 'package:namaste/pages/loginScreen.dart';
@@ -53,7 +54,8 @@ class MyApp extends StatelessWidget {
             '/waste_form': (context) => WasteForm(),
             '/products': (context) => Products(),
             '/buy_us': (context) => BuyUs(),
-            '/about': (context) => AboutUs()
+            '/about': (context) => AboutUs(),
+            DeciderPage.routeName:(context)=>DeciderPage(),
           },
         ));
   }

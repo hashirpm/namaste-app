@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:namaste/models/product.dart';
+import 'package:namaste/models/user.dart';
 import 'package:namaste/models/waste.dart';
 import 'package:namaste/navbar.dart';
 import 'package:namaste/pages/scheduleConfirm.dart';
@@ -25,6 +26,8 @@ class _WasteFormState extends State<WasteForm> {
 bool isLoading=false;
   @override
   Widget build(BuildContext context) {
+    
+ UserData userData= Provider.of<UserProvider>(context, listen: false).userData;
     return Scaffold(
         appBar: AppBar(
           leading: Builder(builder: (BuildContext context) {
@@ -178,10 +181,10 @@ bool isLoading=false;
                                   });
                                   _formKey.currentState!.save();
                                   wasteData = WasteData(
-                                      uid: "#####",
+                                      uid: userData.uid,
                                       name: nameController.text,
                                       type: typeController,
-                                      phone: "123456",
+                                      phone: userData.phone,
                                       pincode: pinController.text,
                                       weight: "0",
                                       ward: "N/A");
