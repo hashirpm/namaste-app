@@ -73,10 +73,14 @@ class NavBar extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+
+                      
+
                             Text("${userData.name}",
                                 style: TextStyle(fontSize: 22),
                                 textAlign: TextAlign.left),
                             Text("Points: ${userData.points}", textAlign: TextAlign.left)
+
                           ]))),
             ]),
           ),

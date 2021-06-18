@@ -39,7 +39,8 @@ class PaymentMode extends StatelessWidget {
                       color: Colors.green[100]),
                   alignment: Alignment.center,
                   child: InkWell(
-                      onTap: () => null,
+                      onTap: () =>
+                          Navigator.pushNamed(context, "/card_payment"),
                       child: Text("CREDIT CARD",
                           style: TextStyle(color: Colors.green[900])))),
               Container(

@@ -55,7 +55,11 @@ class MyApp extends StatelessWidget {
             '/products': (context) => Products(),
             '/buy_us': (context) => BuyUs(),
             '/about': (context) => AboutUs(),
+
+            '/card_payment': (context) => BuyUs()
+
             DeciderPage.routeName:(context)=>DeciderPage(),
+
           },
         ));
   }
