@@ -24,6 +24,8 @@ class _MyProfileState extends State<MyProfile> {
       new TextEditingController(text: userData.phone);
   TextEditingController locationController =
       new TextEditingController(text: userData.pincode);
+      TextEditingController pointsController =
+      new TextEditingController(text: userData.points.toString());
     return Scaffold(
       appBar: AppBar(
         leading: Builder(builder: (BuildContext context) {
@@ -94,6 +96,10 @@ class _MyProfileState extends State<MyProfile> {
               label: "Location",
               controller: locationController,
             ),
+           LabeledTextField(
+ label: "Points",
+              controller: pointsController,
+           )
             // Row(
             //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             //   children: [
