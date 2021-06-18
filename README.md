@@ -18,6 +18,15 @@ The idea here is to introduce people to new ways of waste disposal through an ea
 
 ## Demo video
 
+## App Screenshots
+
+![](./assets/images/readmeIMG/1.jpg)
+![](./assets/images/readmeIMG/2.jpg)
+![](./assets/images/readmeIMG/3.jpg)
+![](./assets/images/readmeIMG/4.jpg)
+![](./assets/images/readmeIMG/5.jpg)
+![](./assets/images/readmeIMG/6.jpg)
+
 ## Long description
 
 ### What is this project?
