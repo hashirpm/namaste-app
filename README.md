@@ -18,6 +18,21 @@ The idea here is to introduce people to new ways of waste disposal through an ea
 
 ## Demo video
 
+[Link to Demo Video](https://youtu.be/xXcQq8mtQxw)
+
+## App Screenshots
+
+<img src="./assets/images/readmeIMG/1.jpg" width="250" height="500">
+<img src="./assets/images/readmeIMG/2.jpg" width="250" height="500">  
+<img src="./assets/images/readmeIMG/3.jpg" width="250" height="500">
+<img src="./assets/images/readmeIMG/4.jpg" width="250" height="500"> 
+<img src="./assets/images/readmeIMG/5.jpg" width="250" height="500">
+<img src="./assets/images/readmeIMG/6.jpg" width="250" height="500">
+
+## Architecture
+
+<img src="./assets/images/readmeIMG/arch.png" width="700" height="500">
+
 ## Long description
 
 ### What is this project?
@@ -46,29 +61,61 @@ Thus, our project brings together efficient ways of disposal as well as proper c
 
 ## Project Roadmap
 
+<img src="./assets/images/readmeIMG/plan.jpeg" width="500" height="300">
+
 The project currently does the following:
 
-. Allows users to schedule a pickup date
-. Manages different kinds of waste efficiently
-. Provides livelihood to various women and craftsmen communities
+1. Allows users to schedule a pickup date
+2. Manages different kinds of waste efficiently
+3. Provides livelihood to various women and craftsmen communities
 
 Future steps include:
 
-. Ensuring better quality products by checking the batch of goods as a whole using machine learning
-. Integrating IBM databse and Watson translation, chatbot services to namaste app.
-. Utilising IBM visual recognition services to help identify the type of waste from an image captured by the user.
-. Enabling cryptomining in the background of our app to attract young people and this crypto rewards could be redeemed while purchasing from our app
-. Plotting areas with large waste dump/landfills on a ML based map which classifies the image inputs from user
+1. Ensuring better quality products by checking the batch of goods as a whole using machine learning
+2. Integrating IBM databse and Watson translation, chatbot services to namaste app.
+3. Utilising IBM visual recognition services to help identify the type of waste from an image captured by the user.
+4. Enabling cryptomining in the background of our app to attract young people and this crypto rewards could be redeemed while purchasing from our app
+5. Plotting areas with large waste dump/landfills on a ML based map which classifies the image inputs from user
 
 ## Built with
 
 - Flutter
 - IBM Cloud Foundry
 
-## Authors
+## How to Run
 
-- Rosemary benny
-- Aishwarya S Prabhu
-- Hashir P M
-- Navneeth Variar
-- Rishika Raveendran
+**Step 1:**
+
+Download or clone this repo by using the link below:
+
+```
+https://github.com/hashirpm/shop-scan.git
+```
+
+**Step 2:**
+
+Go to project root and execute the following command in console to get the required dependencies:
+
+```
+flutter pub get
+```
+
+**Step 3:**
+
+Run main.dart file or usethe following command
+
+```
+flutter run
+```
+
+## Contributors
+
+[Rosemary Benny](https://github.com/Rosemary-benny)
+
+[Aishwarya Prabhu](https://github.com/Aishwarya-S-Prabhu)
+
+[Rishika Raveendran](https://github.com/Rishika-Raveendran)
+
+[Navneeth Variar](https://github.com/navneethvariar14)
+
+[Muhammed Hashir PM](https://github.com/hashirpm)
