@@ -10,7 +10,7 @@ class ScheduleConfirmation extends StatelessWidget {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Text(
-        "SCHEDULE CONFIRMED!",
+        "SUCCESS",
         style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
       ),
       SizedBox(height: 20),
@@ -18,25 +18,25 @@ class ScheduleConfirmation extends StatelessWidget {
         image: AssetImage("assets/images/pickup.png"),
       ),
       SizedBox(height: 20),
-      Text("Your next pickup is due on : "),
-      SizedBox(height: 10),
-      Container(
-        alignment: Alignment.center,
-        height: 50,
-        width: MediaQuery.of(context).size.width / 1.1,
-        decoration: BoxDecoration(
-          color: Colors.green[100],
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Text("18 June, 2021 (Monday) - 5:00pm - 6:00pm",
-            style: TextStyle(fontWeight: FontWeight.w800)),
-      ),
+      // Text("Your next pickup is due on : "),
+      // SizedBox(height: 10),
+      // Container(
+      //   alignment: Alignment.center,
+      //   height: 50,
+      //   width: MediaQuery.of(context).size.width / 1.1,
+      //   decoration: BoxDecoration(
+      //     color: Colors.green[100],
+      //     borderRadius: BorderRadius.circular(10),
+      //   ),
+      //   child: Text("18 June, 2021 (Monday) - 5:00pm - 6:00pm",
+      //       style: TextStyle(fontWeight: FontWeight.w800)),
+      // ),
       SizedBox(height: 40),
       InkWell(
         onTap: () {
           Navigator.pushNamed(
             context,
-            "/start_page",
+            "/home",
           );
         },
         child: Text("GO HOME >",

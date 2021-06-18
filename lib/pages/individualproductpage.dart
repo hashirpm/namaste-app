@@ -1,5 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:namaste/models/product.dart';
+import 'package:namaste/models/user.dart';
+import 'package:namaste/pages/scheduleConfirm.dart';
+import 'package:namaste/providers/user_provider.dart';
 import 'package:namaste/widgets/checkBox.dart';
+import 'package:provider/provider.dart';
 
 import '../navbar.dart';
 
@@ -16,8 +22,20 @@ class IndividualProduct extends StatefulWidget {
 }
 
 class _IndividualProductState extends State<IndividualProduct> {
+  var _formKey = GlobalKey<FormState>();
+  ProductData productData = ProductData();
+  var nameController = TextEditingController();
+  var pinController = TextEditingController();
+
+  var locationController = '';
+  var timeController = "";
+  var typeController = "";
+bool isLoading=false;
+
   @override
   Widget build(BuildContext context) {
+     UserData userData= Provider.of<UserProvider>(context, listen: false).userData;
+
     return Scaffold(
         appBar: AppBar(
           leading: Builder(builder: (BuildContext context) {
@@ -41,7 +59,7 @@ class _IndividualProductState extends State<IndividualProduct> {
           ],
         ),
         drawer: NavBar(),
-        body: SingleChildScrollView(
+        body: isLoading?Center(child: CircularProgressIndicator()) :SingleChildScrollView(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -95,6 +113,48 @@ class _IndividualProductState extends State<IndividualProduct> {
                         fontWeight: FontWeight.w700,
                         fontSize: 14,
                         color: Colors.black))),
+                           SizedBox(height: 30),
+                          InkWell(
+                                onTap: () async {
+                                  print('Called');
+                                  setState(() {
+                                    isLoading=true;
+                                  });
+                              
+                                  productData = ProductData(
+                                      uid: userData.uid,
+                                      name: widget.pName.toString(),
+                         
+                                      quantity: "1",
+                                      oPrice: "200",
+                                      dPrice: "200");
+                                  await Provider.of<UserProvider>(context,
+                                          listen: false)
+                                      .addProduct(productData: productData);
+                                      setState(() {
+                                        isLoading=false;
+                                      });
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ScheduleConfirmation()));
+                                },
+                                child: Container(
+                                 
+                            alignment: Alignment(0, 0),
+                       
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: Colors.green[300],
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                                  child: Text(
+                                    
+                                    "BUY",
+                                    style: TextStyle(color: Colors.green[900]),
+                                  ),
+                                )),
             // Row(children: [
             //   Column(
             //     children: [

@@ -3,7 +3,40 @@ import 'package:flutter/material.dart';
 import '../main.dart';
 
 class Utils {
-
+void showAlert({
+  String? errMsgL1,
+  String? errMsgL2,
+  String? title,
+  void Function()? function,
+}) {
+  showDialog<bool>(
+    context: navigatorKey.currentState!.overlay!.context,
+    barrierDismissible: false,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text(title ?? ""),
+        content: SingleChildScrollView(
+          child: ListBody(
+            children: <Widget>[
+              Text(errMsgL1 ?? ""),
+              Text(errMsgL2 ?? ""),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          ElevatedButton(
+            child: const Text('CANCEL'),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+          ElevatedButton(
+            child: const Text('YES'),
+            onPressed: function,
+          ),
+        ],
+      );
+    },
+  );
+}
   showBasicFlushBar({
     required String content,
     Icon icon = const Icon(
