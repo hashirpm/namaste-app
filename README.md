@@ -30,6 +30,7 @@ The idea here is to introduce people to new ways of waste disposal through an ea
 <img src="./assets/images/readmeIMG/6.jpg" width="250" height="500"> 
 
 ## Architecture
+
 <img src="./assets/images/readmeIMG/arch.png" width="700" height="500">
 
 ## Long description
@@ -60,13 +61,13 @@ Thus, our project brings together efficient ways of disposal as well as proper c
 
 ## Project Roadmap
 
+<img src="./assets/images/readmeIMG/plan.jpeg" width="500" height="300">
+
 The project currently does the following:
 
 . Allows users to schedule a pickup date
 . Manages different kinds of waste efficiently
 . Provides livelihood to various women and craftsmen communities
-
-## Contributors
 
 ## Contributors
 
