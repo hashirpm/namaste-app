@@ -64,10 +64,10 @@ class NavBar extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Angela Fernandus",
+                            Text("Alexandra Smith",
                                 style: TextStyle(fontSize: 22),
                                 textAlign: TextAlign.left),
-                            Text("angela_13", textAlign: TextAlign.left)
+                            Text("alexa_13", textAlign: TextAlign.left)
                           ]))),
             ]),
           ),
