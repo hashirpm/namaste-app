@@ -27,7 +27,7 @@ The idea here is to introduce people to new ways of waste disposal through an ea
 <img src="./assets/images/readmeIMG/3.jpg" width="250" height="500">
 <img src="./assets/images/readmeIMG/4.jpg" width="250" height="500"> 
 <img src="./assets/images/readmeIMG/5.jpg" width="250" height="500">
-<img src="./assets/images/readmeIMG/6.jpg" width="250" height="500"> 
+<img src="./assets/images/readmeIMG/6.jpg" width="250" height="500">
 
 ## Architecture
 
@@ -59,16 +59,33 @@ This is where our flutter app comes in. This app allows the user to notify the w
 
 Thus, our project brings together efficient ways of disposal as well as proper collection of waste in the ultimate aim to reduce adverse effects to the environment.
 
+[UI MODEL](https://youtu.be/Fo5WxSLUZo0)
+
 ## Project Roadmap
 
 <img src="./assets/images/readmeIMG/plan.jpeg" width="500" height="300">
 
 The project currently does the following:
+
 1. Allows users to schedule a pickup date
 2. Manages different kinds of waste efficiently
 3. Provides livelihood to various women and craftsmen communities
 
+Future steps include:
+
+1. Ensuring better quality products by checking the batch of goods as a whole using machine learning
+2. Integrating IBM databse and Watson translation, chatbot services to namaste app.
+3. Utilising IBM visual recognition services to help identify the type of waste from an image captured by the user.
+4. Enabling cryptomining in the background of our app to attract young people and this crypto rewards could be redeemed while purchasing from our app
+5. Plotting areas with large waste dump/landfills on a ML based map which classifies the image inputs from user
+
+## Built with
+
+- Flutter
+- IBM Cloud Foundry
+
 ## How to Run
+
 **Step 1:**
 
 Download or clone this repo by using the link below:
@@ -79,10 +96,10 @@ https://github.com/hashirpm/shop-scan.git
 
 **Step 2:**
 
-Go to project root and execute the following command in console to get the required dependencies: 
+Go to project root and execute the following command in console to get the required dependencies:
 
 ```
-flutter pub get 
+flutter pub get
 ```
 
 **Step 3:**
@@ -92,7 +109,6 @@ Run main.dart file or usethe following command
 ```
 flutter run
 ```
-
 
 ## Contributors
 
