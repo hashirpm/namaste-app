@@ -51,3 +51,24 @@ The project currently does the following:
 . Allows users to schedule a pickup date
 . Manages different kinds of waste efficiently
 . Provides livelihood to various women and craftsmen communities
+
+Future steps include:
+
+. Ensuring better quality products by checking the batch of goods as a whole using machine learning
+. Integrating IBM databse and Watson translation, chatbot services to namaste app.
+. Utilising IBM visual recognition services to help identify the type of waste from an image captured by the user.
+. Enabling cryptomining in the background of our app to attract young people and this crypto rewards could be redeemed while purchasing from our app
+. Plotting areas with large waste dump/landfills on a ML based map which classifies the image inputs from user
+
+## Built with
+
+- Flutter
+- IBM Cloud Foundry
+
+## Authors
+
+- Rosemary benny
+- Aishwarya S Prabhu
+- Hashir P M
+- Navneeth Variar
+- Rishika Raveendran
