@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:namaste/models/product.dart';
 import 'package:namaste/models/user.dart';
@@ -176,6 +177,7 @@ bool isLoading=false;
                           InkWell(
                                 onTap: () async {
                                   print('Called');
+                                    String uid = FirebaseAuth.instance.currentUser!.uid.toString();
                                   setState(() {
                                     isLoading=true;
                                   });
@@ -191,6 +193,9 @@ bool isLoading=false;
                                   await Provider.of<UserProvider>(context,
                                           listen: false)
                                       .addWaste(wasteData: wasteData);
+                                      await Provider.of<UserProvider>(context,
+                                          listen: false)
+                                      .addPoints(id:uid,points: 5);
                                       setState(() {
                                         isLoading=false;
                                       });

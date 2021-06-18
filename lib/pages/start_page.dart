@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:namaste/models/user.dart';
 import 'package:namaste/providers/user_provider.dart';
+import 'package:namaste/utils/flushbar_service.dart';
 import 'package:namaste/widgets/card.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +14,7 @@ class StartPage extends StatefulWidget {
 }
 
 class _StartPageState extends State<StartPage> {
+  Utils utils = Utils();
   bool loading = false;
   @override
   void initState() {
@@ -39,8 +41,8 @@ class _StartPageState extends State<StartPage> {
 
   @override
   Widget build(BuildContext context) {
-    UserData userData =
-        Provider.of<UserProvider>(context, listen: false).userData;
+    UserProvider userProvider = Provider.of<UserProvider>(context);
+    UserData userData = Provider.of<UserProvider>(context).userData;
     return loading
         ? Scaffold(body: Center(child: CircularProgressIndicator()))
         : Container(
@@ -141,6 +143,34 @@ class _StartPageState extends State<StartPage> {
                                 Navigator.pushNamed(context, '/');
                               },
                             ),
+                            Provider.of<UserProvider>(context)
+                                        .userData
+                                        .isAdmin ==
+                                    false
+                                ? InkWell(
+                                    onTap: () {
+                                      utils.showAlert(
+                                          errMsgL1:
+                                              "Are you sure you want to register as Volunteer?",
+                                          function: () async {
+                                            String uid = FirebaseAuth
+                                                .instance.currentUser!.uid
+                                                .toString();
+
+                                            Navigator.of(context).pop();
+                                            await userProvider.makeAdmin(
+                                                id: uid);
+                                          });
+                                    },
+                                    child: ContentCard(
+                                        titleText: "Volunteer",
+                                        cardImage: "assets/images/charity.png"))
+                                : InkWell(
+                                    onTap: () {},
+                                    child: ContentCard(
+                                        titleText: "Volunteer Panel",
+                                        cardImage:
+                                            "assets/images/charity.png")),
                             InkWell(
                               child: ContentCard(
                                   titleText: "Future Initiatives",

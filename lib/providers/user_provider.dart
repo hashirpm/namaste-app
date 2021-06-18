@@ -29,6 +29,7 @@ class UserProvider with ChangeNotifier {
 
   Future getUser({required String uid}) async {
     try {
+      print(uid);
       Response response = await userApi.getUser(uid: uid);
 
       _userData = UserData.fromJson(response.data);
@@ -104,10 +105,12 @@ class UserProvider with ChangeNotifier {
     try {
       setBusy(true);
       Response response = await userApi.makeAdmin(id: id);
-      dynamic data = response.data['user'];
-      _userData = UserData.fromJson(data);
+      // dynamic data = response.data['user'];
+      // _userData = UserData.fromJson(data);
+      _userData.isAdmin=true;
 notifyListeners();
       print(_userData.id!);
+      print(_userData.isAdmin);
 
       setBusy(false);
     } catch (e) {
