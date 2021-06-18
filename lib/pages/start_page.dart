@@ -135,14 +135,14 @@ class _StartPageState extends State<StartPage> {
                                 Navigator.pushNamed(context, '/buy_us');
                               },
                             ),
-                            InkWell(
-                              child: ContentCard(
-                                  titleText: "Volunteer",
-                                  cardImage: "assets/images/charity.png"),
-                              onTap: () {
-                                Navigator.pushNamed(context, '/');
-                              },
-                            ),
+                            // InkWell(
+                            //   child: ContentCard(
+                            //       titleText: "Volunteer",
+                            //       cardImage: "assets/images/charity.png"),
+                            //   onTap: () {
+                            //     Navigator.pushNamed(context, '/');
+                            //   },
+                            // ),
                             Provider.of<UserProvider>(context)
                                         .userData
                                         .isAdmin ==
