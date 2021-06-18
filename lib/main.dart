@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:namaste/pages/aboutUs.dart';
 import 'package:namaste/pages/buyUs.dart';
-
+import 'package:namaste/pages/deciderPage.dart';
 import 'package:namaste/pages/eWaste.dart';
 import 'package:namaste/pages/home.dart';
 import 'package:namaste/pages/loginScreen.dart';
@@ -55,7 +55,11 @@ class MyApp extends StatelessWidget {
             '/products': (context) => Products(),
             '/buy_us': (context) => BuyUs(),
             '/about': (context) => AboutUs(),
+
             '/card_payment': (context) => BuyUs()
+
+            DeciderPage.routeName:(context)=>DeciderPage(),
+
           },
         ));
   }

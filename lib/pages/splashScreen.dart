@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:namaste/pages/deciderPage.dart';
 import 'dart:async';
 import 'loginScreen.dart';
 
@@ -15,8 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(
         Duration(seconds: 3),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => LoginScreen())));
+        () => Navigator.of(context).popAndPushNamed(DeciderPage.routeName));
   }
 
   @override
