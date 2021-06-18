@@ -20,7 +20,7 @@ The idea here is to introduce people to new ways of waste disposal through an ea
 
 ## App Screenshots
 
-![](./assets/images/readmeIMG/1.jpg) ![](./assets/images/readmeIMG/2.jpg)
+<img src="./assets/images/readmeIMG/1.jpg)" width="100" height="100"> ![](./assets/images/readmeIMG/2.jpg)
 ![](./assets/images/readmeIMG/3.jpg) ![](./assets/images/readmeIMG/4.jpg)
 ![](./assets/images/readmeIMG/5.jpg) ![](./assets/images/readmeIMG/6.jpg)
 
