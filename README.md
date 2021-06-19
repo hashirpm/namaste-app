@@ -91,7 +91,7 @@ Future steps include:
 Download or clone this repo by using the link below:
 
 ```
-https://github.com/hashirpm/shop-scan.git
+https://github.com/hashirpm/namaste-app.git
 ```
 
 **Step 2:**
